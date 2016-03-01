@@ -29,6 +29,9 @@ function regulate(anyValues, anyPromotions, anyEliminations, anyImmutables, opti
 	}
 
 	function _regulate(values) {
+		if(values instanceof RegExp){
+			return values;
+		}
 		return _array(values) || _object({}, values) || values;
 	}
 
